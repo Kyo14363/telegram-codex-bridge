@@ -1,0 +1,9 @@
+# Telegram Codex Bridge public runtime dependencies
+python-telegram-bot==22.6
+requests==2.32.5
+trafilatura>=2.0.0
+yt-dlp>=2025.1.0
+
+# Optional helpers:
+#   python -m pip install google-genai   # Gemini image analysis
+#   python -m pip install langextract    # structured extraction enrichment

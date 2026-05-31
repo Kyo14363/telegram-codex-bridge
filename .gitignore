@@ -1,0 +1,37 @@
+# Secrets
+.env
+
+# Runtime data
+logs/
+runs/
+fetch_outputs/
+obsidian_clippings/
+workspace/
+stats.json
+*.log
+*.log.*
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+venv/
+.venv/
+ENV/
+
+# IDE / OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Backups
+*.bak
+*.bak.*
