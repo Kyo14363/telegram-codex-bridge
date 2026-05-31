@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import Iterable, List
 
 
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 VERSION_LABEL = f"Telegram Codex Bridge v{VERSION}"
 BASE_DIR = Path(__file__).resolve().parent
 

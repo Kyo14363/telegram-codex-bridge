@@ -12,7 +12,7 @@ Official program page:
 
 - Repository: https://github.com/Kyo14363/telegram-codex-bridge
 - Role: primary maintainer
-- Project stage: early public `v0.1.0` prerelease extracted from a working
+- Project stage: early public `v0.1.1` prerelease extracted from a working
   personal bridge
 
 ## Positioning
@@ -103,7 +103,8 @@ https://openai.com/form/codex-for-oss/
   workflow end-to-end.
 - Expand `docs/SECURITY.md` with platform-specific hardening notes for Windows,
   macOS, Linux, and containerized deployments.
-- Replace `docs/DEMO_TRANSCRIPT.md` with a redacted live Telegram transcript.
+- Add more redacted live transcripts for issue triage, PR review, and release
+  checklist workflows.
 - Add tests for prompt construction, event summarization, and URL preprocessing
   edge cases.
 - Add a sample `.env` walkthrough for Windows and Linux.

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1 - Live dry-run hardening
+
+- Added a redacted live Telegram dry-run transcript.
+- Documented the two dry-run fixes discovered while dogfooding: repo-root
+  relative path resolution and explicit Codex model compatibility settings.
+
 ## 0.1.0 - Public OSS readiness release
 
 - Added public-safe Telegram Codex Bridge entry point.

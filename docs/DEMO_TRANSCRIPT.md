@@ -1,12 +1,64 @@
 # Demo Transcript
 
-This is an illustrative transcript for the current public skeleton. It is not a
-production log and does not contain private tokens, real issue data, or local
-workspace paths.
+This file contains one redacted live dry run plus illustrative workflow
+transcripts. It does not contain private tokens, Telegram user IDs, real issue
+data, or private workspace paths.
 
 The goal is to show the maintainer experience the project is designed around:
 start from Telegram, let the bridge gather lightweight context, run one bounded
 Codex task, and return a reviewable result.
+
+## Live Dry Run (Redacted)
+
+Date: 2026-05-31
+
+Local safety settings:
+
+```env
+TCB_ALLOWED_USER_IDS=<one allowed Telegram user>
+TCB_CODEX_MODEL=gpt-5.4
+TCB_CODEX_FULL_AUTO=false
+TCB_CODEX_SEARCH=false
+TCB_WORKING_DIR=.\workspace
+TCB_CODEX_EXTRA_DIRS=
+```
+
+Maintainer sends from Telegram:
+
+```text
+請回覆一段簡短狀態摘要：這是 telegram-codex-bridge v0.1.0 dry run。不要修改檔案。
+```
+
+Bridge runs Codex with a repo-local workspace:
+
+```text
+codex exec --json --skip-git-repo-check -C <repo>\workspace -o <repo>\runs\codex-last-20260531-182934.txt -m gpt-5.4 -
+```
+
+Telegram receives:
+
+```text
+Codex result
+
+狀態摘要：這是 `telegram-codex-bridge v0.1.0` 的 dry run，訊息已正常處理。本次僅回覆狀態，未修改任何檔案，也未進行寫入操作。
+```
+
+Observed outcome:
+
+- Telegram polling worked.
+- The allowlist accepted the maintainer's Telegram account.
+- Codex CLI launched through the bridge.
+- The bridge wrote the prompt and final output into `runs/`.
+- `TCB_CODEX_FULL_AUTO=false` stayed in effect.
+- No files were modified by the Codex task.
+
+Two issues were found and fixed during the live dry run:
+
+- Relative runtime paths must resolve from the repository root before passing
+  them to Codex. This prevents `workspace\workspace` style failures.
+- Some Codex CLI installs may reject their default model. The local dry run set
+  `TCB_CODEX_MODEL=gpt-5.4`, and the public docs now explain this compatibility
+  setting.
 
 ## Setup Used
 

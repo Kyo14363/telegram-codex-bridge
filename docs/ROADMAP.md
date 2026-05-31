@@ -15,7 +15,7 @@ before adding broad features.
 - [x] Issue templates
 - [x] Contribution guide
 - [x] First prerelease tag and GitHub release
-- [ ] Redacted live Telegram transcript
+- [x] Redacted live Telegram transcript
 - [ ] Fresh-checkout setup verification
 
 ## v0.2: Maintainer Workflow Kit
