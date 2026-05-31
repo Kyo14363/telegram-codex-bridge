@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Added a redacted live repository-context-review transcript from Telegram
+  dogfooding.
+- Reworked the demo transcript into a cleaner public-facing evidence page.
 - Added a redacted live issue-triage transcript from Telegram dogfooding.
 - Added a live workflow runbook for Telegram dogfooding, transcript capture,
   and public redaction.
