@@ -12,8 +12,8 @@ Official program page:
 
 - Repository: https://github.com/Kyo14363/telegram-codex-bridge
 - Role: primary maintainer
-- Project stage: early public OSS skeleton extracted from a working personal
-  bridge
+- Project stage: early public `v0.1.0` prerelease extracted from a working
+  personal bridge
 
 ## Positioning
 

@@ -14,6 +14,7 @@ before adding broad features.
 - [x] Illustrative demo transcript
 - [x] Issue templates
 - [x] Contribution guide
+- [x] First prerelease tag and GitHub release
 - [ ] Redacted live Telegram transcript
 - [ ] Fresh-checkout setup verification
 
