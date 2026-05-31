@@ -99,10 +99,10 @@ https://openai.com/form/codex-for-oss/
 
 ## Near-Term Roadmap
 
-- Add a `docs/WORKFLOWS.md` guide with concrete PR review, issue triage, and
-  release checklist examples.
-- Add a `docs/SECURITY.md` guide covering Telegram allowlists, local execution
-  boundaries, and secret/log handling.
+- Expand `docs/WORKFLOWS.md` with screenshots or transcripts showing each
+  workflow end-to-end.
+- Expand `docs/SECURITY.md` with platform-specific hardening notes for Windows,
+  macOS, Linux, and containerized deployments.
 - Add tests for prompt construction, event summarization, and URL preprocessing
   edge cases.
 - Add a sample `.env` walkthrough for Windows and Linux.

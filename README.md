@@ -97,6 +97,13 @@ Codex CLI on their own machine. It is not a hosted service.
 
 See [COMMANDS.md](COMMANDS.md).
 
+## Documentation
+
+- [Maintainer workflows](docs/WORKFLOWS.md)
+- [Security guide](docs/SECURITY.md)
+- [Security policy](SECURITY.md)
+- [Codex for Open Source notes](docs/OSS_APPLICATION_NOTES.md)
+
 ## Codex for Open Source
 
 This project is being prepared for the Codex for Open Source program as an
