@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.2 - Setup verification and troubleshooting
+
+- Added fresh-checkout setup verification documentation.
+- Added troubleshooting documentation based on real dogfooding failures.
+- Linked setup verification and troubleshooting docs from the README.
+
 ## 0.1.1 - Live dry-run hardening
 
 - Added a redacted live Telegram dry-run transcript.

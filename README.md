@@ -24,7 +24,7 @@ Example maintainer workflows:
 
 ## Status
 
-This is an early `v0.1.1` prerelease extracted from a personal bridge. It is
+This is an early `v0.1.2` prerelease extracted from a personal bridge. It is
 useful for maintainers who are comfortable self-hosting a Telegram bot and
 running Codex CLI on their own machine. It is not a hosted service.
 
@@ -108,6 +108,8 @@ See [COMMANDS.md](COMMANDS.md).
 
 - [Maintainer workflows](docs/WORKFLOWS.md)
 - [Illustrative demo transcript](docs/DEMO_TRANSCRIPT.md)
+- [Fresh-checkout setup verification](docs/SETUP_VERIFICATION.md)
+- [Troubleshooting](docs/TROUBLESHOOTING.md)
 - [Roadmap](docs/ROADMAP.md)
 - [Contributing](CONTRIBUTING.md)
 - [Security guide](docs/SECURITY.md)

@@ -12,7 +12,7 @@ Official program page:
 
 - Repository: https://github.com/Kyo14363/telegram-codex-bridge
 - Role: primary maintainer
-- Project stage: early public `v0.1.1` prerelease extracted from a working
+- Project stage: early public `v0.1.2` prerelease extracted from a working
   personal bridge
 
 ## Positioning
@@ -39,6 +39,9 @@ as a reusable workflow pattern:
   reviewable Codex tasks without requiring a new SaaS surface.
 - The project favors conservative safety defaults: explicit user allowlist,
   repo-local runtime paths, and opt-in `--full-auto`.
+- The public repository now includes a fresh-checkout verification note, a
+  redacted live Telegram dry-run transcript, and troubleshooting notes based on
+  real dogfooding failures.
 
 ## Planned Use of API Credits
 
@@ -105,6 +108,7 @@ https://openai.com/form/codex-for-oss/
   macOS, Linux, and containerized deployments.
 - Add more redacted live transcripts for issue triage, PR review, and release
   checklist workflows.
+- Add fresh virtual-environment verification on Windows and Linux.
 - Add tests for prompt construction, event summarization, and URL preprocessing
   edge cases.
 - Add a sample `.env` walkthrough for Windows and Linux.
