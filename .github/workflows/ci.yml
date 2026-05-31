@@ -24,3 +24,5 @@ jobs:
         run: python smoke_tests.py
       - name: Repository sanity checks
         run: python scripts/sanity_check.py
+      - name: Package build
+        run: python -m build

@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+## 0.2.1 - Dogfooding evidence refresh
+
+- Added a redacted live release-checklist transcript from Telegram dogfooding.
 - Added a redacted live repository-context-review transcript from Telegram
   dogfooding.
 - Reworked the demo transcript into a cleaner public-facing evidence page.
@@ -9,6 +12,9 @@
 - Added a live workflow runbook for Telegram dogfooding, transcript capture,
   and public redaction.
 - Created a public dogfooding issue for the issue-triage workflow.
+- Refreshed setup verification and roadmap docs after dogfooding found stale
+  entries.
+- Added package build verification to CI and development dependencies.
 
 ## 0.2.0 - Maintainer workflow kit
 

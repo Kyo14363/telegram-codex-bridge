@@ -24,7 +24,7 @@ Example maintainer workflows:
 
 ## Status
 
-This is an early `v0.2.0` alpha release extracted from a personal bridge. It is
+This is an early `v0.2.1` alpha release extracted from a personal bridge. It is
 useful for maintainers who are comfortable self-hosting a Telegram bot and
 running Codex CLI on their own machine. It is not a hosted service.
 

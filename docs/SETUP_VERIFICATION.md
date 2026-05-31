@@ -1,10 +1,10 @@
 # Fresh-Checkout Setup Verification
 
-This document records a clean verification pass from a fresh clone of the
-public GitHub repository. It is intended to give maintainers and reviewers a
-quick reproducibility signal.
+This document records clean verification passes from fresh clones of the public
+GitHub repository. It is intended to give maintainers and reviewers a quick
+reproducibility signal.
 
-## Verification Summary
+## Latest Verification Summary
 
 - Date: 2026-05-31
 - Platform: Windows / PowerShell
@@ -21,8 +21,12 @@ checkout:
 git clone --depth 1 https://github.com/Kyo14363/telegram-codex-bridge.git
 cd telegram-codex-bridge
 python -m pip install -r requirements.txt
+python -m pip install -e ".[dev]"
+python -m ruff check .
 python -m compileall -q .
 python smoke_tests.py
+python scripts/sanity_check.py
+python -m build
 python -c "from config import CONFIG; print(CONFIG['WORKING_DIR'].is_absolute()); print(CONFIG['CODEX_FULL_AUTO'])"
 ```
 
@@ -32,14 +36,18 @@ python -c "from config import CONFIG; print(CONFIG['WORKING_DIR'].is_absolute())
 |---|---|---|
 | `git clone --depth 1` | pass | Fresh clone from GitHub completed. |
 | `python -m pip install -r requirements.txt` | pass | Required packages were already installed in the verification environment. |
+| `python -m pip install -e ".[dev]"` | pass | Editable install and development tools installed. |
+| `python -m ruff check .` | pass | High-signal lint checks passed. |
 | `python -m compileall -q .` | pass | All Python files compiled. |
-| `python smoke_tests.py` | pass | 7 tests passed. |
+| `python smoke_tests.py` | pass | 10 tests passed. |
+| `python scripts/sanity_check.py` | pass | Repository sanity checks passed. |
+| `python -m build` | pass | Source distribution and wheel built. |
 | `config` import without `.env` | pass | `WORKING_DIR` resolved to an absolute path and `CODEX_FULL_AUTO` defaulted to `False`. |
 
 Smoke-test output:
 
 ```text
-Ran 7 tests
+Ran 10 tests
 OK
 ```
 
@@ -54,8 +62,12 @@ False
 
 - Public clone works.
 - Runtime dependencies install.
+- Editable development install works.
+- High-signal lint checks pass.
 - Python files compile.
 - Smoke tests run without Telegram, network calls, or live Codex tasks.
+- Repository sanity checks pass.
+- Package source distribution and wheel build.
 - Configuration can import without a `.env` file.
 - Safe default `TCB_CODEX_FULL_AUTO=false` remains intact.
 - Relative runtime paths resolve to absolute paths.

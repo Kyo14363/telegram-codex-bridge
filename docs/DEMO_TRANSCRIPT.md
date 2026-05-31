@@ -247,6 +247,91 @@ Observed outcome:
   commit dates were omitted from this public transcript because they become stale
   quickly. The dated run still captures the workflow behavior.
 
+## Live Release Checklist
+
+Date: 2026-05-31
+
+Maintainer sends:
+
+```text
+In the current working directory, prepare a release checklist.
+
+Do not modify files.
+
+Inspect:
+- repo status and recent commits
+- changelog and version markers
+- packaging or install metadata
+- test and lint commands
+- docs that should be updated before release
+
+Return:
+- readiness summary
+- blockers
+- suggested verification commands
+- changelog/release-note draft outline
+- final go/no-go recommendation
+```
+
+Captured bridge progress:
+
+```text
+Only the final Telegram result was captured for this run.
+```
+
+Telegram receives, abridged:
+
+```text
+Codex result
+
+Readiness summary:
+The worktree is clean on main...origin/main. Recent commits are mostly
+docs/dogfooding focused, while the last code-and-metadata-heavy release commit
+is the v0.2 workflow kit. The release surface is in decent shape:
+pyproject.toml defines package metadata, config.py and README identify the
+project version, CHANGELOG.md has unreleased entries, and CI covers install,
+lint, compile, smoke, and sanity checks.
+
+Blockers:
+- CHANGELOG.md still has unreleased items while config.py and pyproject.toml
+  remain at v0.2.0.
+- docs/SETUP_VERIFICATION.md is stale: it still reports 7 smoke tests, while
+  the current suite has 10.
+- docs/ROADMAP.md is stale: it leaves contributor guide and real-world
+  dogfooding examples unchecked even though they now exist.
+- Package build verification is not part of CI. This is not a blocker for a
+  source-only GitHub release, but it matters if built artifacts are intended.
+
+Suggested verification commands:
+- python -m pip install -r requirements.txt
+- python -m pip install -e ".[dev]"
+- python -m ruff check .
+- python -m compileall -q .
+- python smoke_tests.py
+- python scripts/sanity_check.py
+- python -m pip install build
+- python -m build
+
+Release-note draft:
+If releasing current HEAD, v0.2.1 is more defensible than v0.3.0 based on
+visible scope. It looks like a documentation and dogfooding evidence refresh for
+the maintainer workflow kit.
+
+Go/no-go recommendation:
+No-go yet. Decide and stamp the next version, move changelog entries out of
+Unreleased, refresh stale verification/docs entries, rerun checks, and then cut
+a small v0.2.1 alpha-style release.
+```
+
+Observed outcome:
+
+- The bridge produced a release checklist with concrete blockers.
+- The checklist found real stale documentation in the repository.
+- The response recommended a conservative `v0.2.1` follow-up rather than
+  overclaiming `v0.3.0`.
+- The blockers were addressed after this run by refreshing setup verification,
+  roadmap status, changelog/version markers, and CI package-build coverage.
+
 ## Illustrative Release Checklist
 
 Maintainer sends:

@@ -12,7 +12,7 @@ Official program page:
 
 - Repository: https://github.com/Kyo14363/telegram-codex-bridge
 - Role: primary maintainer
-- Project stage: early public `v0.2.0` alpha release extracted from a working
+- Project stage: early public `v0.2.1` alpha release extracted from a working
   personal bridge
 
 ## Positioning
@@ -39,10 +39,11 @@ as a reusable workflow pattern:
   reviewable Codex tasks without requiring a new SaaS surface.
 - The project favors conservative safety defaults: explicit user allowlist,
   repo-local runtime paths, and opt-in `--full-auto`.
-- The public repository now includes a `v0.2.0` prerelease, prompt templates,
+- The public repository now includes a `v0.2.1` prerelease, prompt templates,
   workflow presets, a live workflow runbook, fresh-checkout verification notes,
-  a redacted live Telegram dry-run transcript, CI sanity checks, and
-  troubleshooting notes based on real dogfooding failures.
+  redacted live Telegram dogfooding transcripts, CI sanity checks, package
+  build verification, and troubleshooting notes based on real dogfooding
+  failures.
 
 ## Planned Use of API Credits
 

@@ -28,15 +28,16 @@ before adding broad features.
 - [x] More tests for prompt template coverage, output formatting, and stderr
       noise filtering
 - [x] Live workflow runbook for Telegram dogfooding and redaction
-- [ ] Demo screenshots or terminal captures
+- [x] Live demo transcripts for issue triage, repository context review, and
+      release checklist
 - [x] Optional workflow presets for review-only vs full-auto mode
 - [ ] Better setup notes for Windows, macOS, and Linux
 
 ## v0.3: Adoptable OSS Tool
 
-- [ ] Versioned release notes and GitHub releases
-- [ ] Real-world dogfooding examples
-- [ ] Contributor guide
+- [x] Versioned release notes and GitHub releases
+- [x] Real-world dogfooding examples
+- [x] Contributor guide
 - [ ] Security hardening checklist by deployment mode
 - [ ] Minimal plugin architecture for extra URL/context providers
 

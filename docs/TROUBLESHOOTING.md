@@ -154,7 +154,7 @@ PowerShell wraps unittest output like this:
 
 ```text
 NativeCommandError
-Ran 7 tests
+Ran 10 tests
 OK
 ```
 
@@ -169,7 +169,7 @@ Check the final test result and exit code. In this repository, successful smoke
 tests end with:
 
 ```text
-Ran 7 tests
+Ran 10 tests
 OK
 ```
 
