@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.3 - CI hardening
+
+- Added development requirements for CI-only tooling.
+- Added high-signal Ruff linting for syntax and undefined-name errors.
+- Added repository sanity checks for tracked runtime artifacts, private path
+  leaks, token patterns, internal Markdown links, and version consistency.
+- Split the GitHub Actions workflow into clearer install, lint, compile, smoke,
+  and sanity stages.
+
 ## 0.1.2 - Setup verification and troubleshooting
 
 - Added fresh-checkout setup verification documentation.

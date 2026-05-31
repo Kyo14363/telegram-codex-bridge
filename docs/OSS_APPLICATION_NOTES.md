@@ -12,7 +12,7 @@ Official program page:
 
 - Repository: https://github.com/Kyo14363/telegram-codex-bridge
 - Role: primary maintainer
-- Project stage: early public `v0.1.2` prerelease extracted from a working
+- Project stage: early public `v0.1.3` prerelease extracted from a working
   personal bridge
 
 ## Positioning

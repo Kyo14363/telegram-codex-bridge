@@ -25,7 +25,6 @@ def retry_fetch(func, *args, max_retries: int = 2, backoff: float = 1.0, **kwarg
     首次失敗後最多重試 max_retries 次，每次等待 backoff 秒（線性遞增）。
     回傳 (result, attempts, elapsed_sec)。
     """
-    last_error = None
     start = time.monotonic()
     for attempt in range(1 + max_retries):
         try:
@@ -35,10 +34,7 @@ def retry_fetch(func, *args, max_retries: int = 2, backoff: float = 1.0, **kwarg
                 if attempt > 0:
                     logger.info(f"[retry] {func.__name__} 第 {attempt + 1} 次嘗試成功")
                 return result, attempt + 1, elapsed
-            # result is None 不算異常，但也不算成功 — 嘗試下一次
-            last_error = "returned None"
         except Exception as e:
-            last_error = str(e)
             logger.warning(f"[retry] {func.__name__} 第 {attempt + 1} 次失敗: {e}")
         if attempt < max_retries:
             wait = backoff * (attempt + 1)
@@ -80,7 +76,7 @@ except ImportError:
     logger.info("trafilatura 未安裝，general URL 將只能拿到 title/og:description")
 
 # vision 模組 — 延遲 import 避免循環依賴
-from vision import analyze_images, GENAI_AVAILABLE
+from vision import analyze_images
 
 
 # --- URL 偵測與分類 ---
@@ -267,7 +263,7 @@ def fetch_via_fxtwitter(url: str, config: dict = None) -> Optional[Tuple[str, Li
         return result, image_urls, tweet_meta
 
     except requests.Timeout:
-        logger.warning(f"[fxtwitter] 請求超時")
+        logger.warning("[fxtwitter] 請求超時")
         return None
     except Exception as e:
         logger.error(f"[fxtwitter] 錯誤: {e}")
@@ -867,8 +863,6 @@ async def preprocess_urls(text: str, config: dict = None,
     enrichments = []
     summaries = []
     obsidian_queue = []  # 收集需要落地 Obsidian 的內容 (url, content, meta)
-    max_retries = cfg.get("FETCH_MAX_RETRIES", 2)
-
     for url, platform in urls:
         content = None
         method_used = None

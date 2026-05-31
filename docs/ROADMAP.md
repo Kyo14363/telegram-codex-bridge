@@ -18,6 +18,7 @@ before adding broad features.
 - [x] Redacted live Telegram transcript
 - [x] Fresh-checkout setup verification
 - [x] Troubleshooting guide
+- [x] CI high-signal lint and repository sanity checks
 
 ## v0.2: Maintainer Workflow Kit
 
