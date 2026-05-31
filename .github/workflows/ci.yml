@@ -14,10 +14,10 @@ jobs:
           python-version: "3.11"
       - name: Install runtime dependencies
         run: python -m pip install -r requirements.txt
-      - name: Install development dependencies
-        run: python -m pip install -r dev-requirements.txt
+      - name: Install editable package and development dependencies
+        run: python -m pip install -e ".[dev]"
       - name: Lint high-signal Python errors
-        run: python -m ruff check . --select E9,F
+        run: python -m ruff check .
       - name: Compile
         run: python -m compileall -q .
       - name: Smoke tests

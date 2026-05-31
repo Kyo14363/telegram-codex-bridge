@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.2.0 - Maintainer workflow kit
+
+- Added Python project metadata in `pyproject.toml`, including an editable
+  install path, optional dependency groups, Ruff settings, and a console script.
+- Added maintainer prompt templates for issue triage, PR review, release
+  checklists, CI failure triage, and repository context review.
+- Added workflow presets for review-only, URL context, local maintainer, and
+  scoped full-auto modes.
+- Expanded smoke tests for output formatting, stderr noise filtering, and
+  prompt template coverage.
+- Extended repository sanity checks to scan TOML files and verify
+  `pyproject.toml` version consistency.
+- Updated CI to install the editable package and use the checked-in Ruff config.
+
 ## 0.1.3 - CI hardening
 
 - Added development requirements for CI-only tooling.

@@ -18,6 +18,9 @@ progress back to Telegram.
 
 ## Example Prompts
 
+More complete maintainer prompts live in
+[docs/PROMPT_TEMPLATES.md](docs/PROMPT_TEMPLATES.md).
+
 ```text
 Review this GitHub repository and summarize whether it looks maintained:
 https://github.com/example/project

@@ -22,12 +22,13 @@ before adding broad features.
 
 ## v0.2: Maintainer Workflow Kit
 
-- [ ] Prompt templates for issue triage, PR review, release checklists, and CI
+- [x] Prompt templates for issue triage, PR review, release checklists, and CI
       failure triage
-- [ ] More tests for prompt construction, Codex event parsing, and URL
-      preprocessing edge cases
+- [x] Package metadata and editable development install
+- [x] More tests for prompt template coverage, output formatting, and stderr
+      noise filtering
 - [ ] Demo screenshots or terminal captures
-- [ ] Optional workflow presets for review-only vs full-auto mode
+- [x] Optional workflow presets for review-only vs full-auto mode
 - [ ] Better setup notes for Windows, macOS, and Linux
 
 ## v0.3: Adoptable OSS Tool

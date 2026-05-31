@@ -10,6 +10,7 @@ from __future__ import annotations
 import os
 import re
 import subprocess
+import tomllib
 from pathlib import Path
 
 
@@ -46,6 +47,7 @@ TEXT_SUFFIXES = {
     ".md",
     ".py",
     ".txt",
+    ".toml",
     ".yml",
     ".yaml",
 }
@@ -134,6 +136,14 @@ def check_version_consistency() -> list[str]:
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     if f"`v{version}`" not in readme:
         errors.append(f"README.md does not mention `v{version}`")
+    pyproject_path = ROOT / "pyproject.toml"
+    if pyproject_path.exists():
+        project = tomllib.loads(pyproject_path.read_text(encoding="utf-8")).get("project", {})
+        if project.get("version") != version:
+            errors.append(
+                "pyproject.toml project.version does not match "
+                f"config.py VERSION={version}"
+            )
     return errors
 
 

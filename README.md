@@ -24,7 +24,7 @@ Example maintainer workflows:
 
 ## Status
 
-This is an early `v0.1.3` prerelease extracted from a personal bridge. It is
+This is an early `v0.2.0` alpha release extracted from a personal bridge. It is
 useful for maintainers who are comfortable self-hosting a Telegram bot and
 running Codex CLI on their own machine. It is not a hosted service.
 
@@ -37,6 +37,7 @@ running Codex CLI on their own machine. It is not a hosted service.
 - File-backed metrics via `/stats`
 - Process cancellation via `/cancel`
 - Public-safe defaults: repo-local runtime folders and opt-in `--full-auto`
+- Maintainer prompt templates and workflow presets for repeatable mobile tasks
 
 ## Layout
 
@@ -50,6 +51,8 @@ running Codex CLI on their own machine. It is not a hosted service.
 | `url_fetchers.py` | URL detection and content extraction helpers |
 | `vision.py` | Optional Gemini Vision helper module |
 | `smoke_tests.py` | Import and command-builder smoke tests |
+| `pyproject.toml` | Python project metadata, console script, and tool settings |
+| `prompts/` | Maintainer prompt templates for Telegram use |
 
 ## Setup
 
@@ -107,6 +110,8 @@ See [COMMANDS.md](COMMANDS.md).
 ## Documentation
 
 - [Maintainer workflows](docs/WORKFLOWS.md)
+- [Prompt templates](docs/PROMPT_TEMPLATES.md)
+- [Workflow presets](docs/WORKFLOW_PRESETS.md)
 - [Illustrative demo transcript](docs/DEMO_TRANSCRIPT.md)
 - [Fresh-checkout setup verification](docs/SETUP_VERIFICATION.md)
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
@@ -136,11 +141,20 @@ bot as a remote control for local engineering work.
 
 ## Development
 
-Run smoke checks:
+Install development tooling:
 
 ```powershell
-python -m compileall .
-python smoke_tests.py
+python -m pip install -e ".[dev]"
 ```
 
-The GitHub Actions workflow runs the same compile and smoke checks.
+Run local checks:
+
+```powershell
+python -m ruff check .
+python -m compileall -q .
+python smoke_tests.py
+python scripts/sanity_check.py
+```
+
+The GitHub Actions workflow runs editable-package install, lint, compile, smoke,
+and repository sanity checks.

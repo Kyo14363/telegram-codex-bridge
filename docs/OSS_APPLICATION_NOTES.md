@@ -12,7 +12,7 @@ Official program page:
 
 - Repository: https://github.com/Kyo14363/telegram-codex-bridge
 - Role: primary maintainer
-- Project stage: early public `v0.1.3` prerelease extracted from a working
+- Project stage: early public `v0.2.0` alpha release extracted from a working
   personal bridge
 
 ## Positioning
@@ -39,16 +39,17 @@ as a reusable workflow pattern:
   reviewable Codex tasks without requiring a new SaaS surface.
 - The project favors conservative safety defaults: explicit user allowlist,
   repo-local runtime paths, and opt-in `--full-auto`.
-- The public repository now includes a fresh-checkout verification note, a
-  redacted live Telegram dry-run transcript, and troubleshooting notes based on
-  real dogfooding failures.
+- The public repository now includes prompt templates, workflow presets,
+  fresh-checkout verification notes, a redacted live Telegram dry-run
+  transcript, CI sanity checks, and troubleshooting notes based on real
+  dogfooding failures.
 
 ## Planned Use of API Credits
 
 Credits would be used to harden and document real maintainer workflows:
 
-- PR review prompt templates and examples.
-- Issue triage and reproduction-question drafting.
+- More real PR review examples and transcripts.
+- Issue triage and reproduction-question drafting examples.
 - Release checklist generation from a local checkout.
 - GitHub/URL context fetching and source-aware summaries.
 - Smoke/eval runs comparing safe mode against `--full-auto`.
@@ -102,14 +103,13 @@ https://openai.com/form/codex-for-oss/
 
 ## Near-Term Roadmap
 
-- Expand `docs/WORKFLOWS.md` with screenshots or transcripts showing each
+- Add screenshots or transcripts showing each
   workflow end-to-end.
-- Expand `docs/SECURITY.md` with platform-specific hardening notes for Windows,
-  macOS, Linux, and containerized deployments.
 - Add more redacted live transcripts for issue triage, PR review, and release
   checklist workflows.
+- Expand `docs/SECURITY.md` with platform-specific hardening notes for Windows,
+  macOS, Linux, and containerized deployments.
 - Add fresh virtual-environment verification on Windows and Linux.
-- Add tests for prompt construction, event summarization, and URL preprocessing
-  edge cases.
+- Add tests for more Codex event shapes and URL preprocessing edge cases.
 - Add a sample `.env` walkthrough for Windows and Linux.
 - Add screenshots showing a maintainer task from Telegram to Codex result.

@@ -14,6 +14,9 @@ Each workflow below follows the same pattern:
 
 Use these presets before trying the workflows.
 
+See [Workflow presets](WORKFLOW_PRESETS.md) for copyable environment examples,
+and [Prompt templates](PROMPT_TEMPLATES.md) for standalone maintainer prompts.
+
 ### Review-only mode
 
 Recommended for first runs and public demos.

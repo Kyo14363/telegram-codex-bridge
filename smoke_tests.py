@@ -108,6 +108,47 @@ class SmokeTests(unittest.TestCase):
         finally:
             CONFIG["ALLOWED_USER_IDS"] = old_allowed
 
+    def test_format_output_strips_ansi_and_truncates(self) -> None:
+        bridge = CodexBridge()
+        old_max = CONFIG["OUTPUT_MAX_CHARS"]
+        try:
+            CONFIG["OUTPUT_MAX_CHARS"] = 10
+            formatted = bridge._format_output("\x1b[31mABCDEFGHIJKLMNO\x1b[0m")
+        finally:
+            CONFIG["OUTPUT_MAX_CHARS"] = old_max
+
+        self.assertNotIn("\x1b[31m", formatted)
+        self.assertIn("ABCDEFGHIJ", formatted)
+        self.assertIn("truncated by Telegram Codex Bridge", formatted)
+
+    def test_stderr_noise_filter_keeps_real_errors(self) -> None:
+        bridge = CodexBridge()
+        self.assertTrue(
+            bridge._is_stderr_noise(
+                "WARN codex_core::plugins::manager: failed to warm featured plugin ids cache"
+            )
+        )
+        self.assertTrue(bridge._is_stderr_noise("<script>window._cf_chl_opt={}</script>"))
+        self.assertFalse(bridge._is_stderr_noise("Error: system cannot find the file specified"))
+
+    def test_prompt_templates_are_present_and_bounded(self) -> None:
+        prompt_dir = BASE_DIR / "prompts"
+        expected = {
+            "issue-triage.md",
+            "pr-review.md",
+            "release-checklist.md",
+            "ci-failure-triage.md",
+            "repo-context-review.md",
+        }
+        existing = {path.name for path in prompt_dir.glob("*.md")}
+        self.assertTrue(expected.issubset(existing))
+
+        for path in prompt_dir.glob("*.md"):
+            text = path.read_text(encoding="utf-8")
+            self.assertIn("```text", text)
+            self.assertIn("Do not", text)
+            self.assertLess(len(text), 1400)
+
 
 if __name__ == "__main__":
     unittest.main()
