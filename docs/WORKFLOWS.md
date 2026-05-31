@@ -16,6 +16,8 @@ Use these presets before trying the workflows.
 
 See [Workflow presets](WORKFLOW_PRESETS.md) for copyable environment examples,
 and [Prompt templates](PROMPT_TEMPLATES.md) for standalone maintainer prompts.
+When you are ready to capture public dogfooding evidence, use the
+[Live workflow runbook](LIVE_WORKFLOW_RUNBOOK.md).
 
 ### Review-only mode
 

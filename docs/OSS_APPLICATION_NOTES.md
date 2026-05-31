@@ -39,10 +39,10 @@ as a reusable workflow pattern:
   reviewable Codex tasks without requiring a new SaaS surface.
 - The project favors conservative safety defaults: explicit user allowlist,
   repo-local runtime paths, and opt-in `--full-auto`.
-- The public repository now includes prompt templates, workflow presets,
-  fresh-checkout verification notes, a redacted live Telegram dry-run
-  transcript, CI sanity checks, and troubleshooting notes based on real
-  dogfooding failures.
+- The public repository now includes a `v0.2.0` prerelease, prompt templates,
+  workflow presets, a live workflow runbook, fresh-checkout verification notes,
+  a redacted live Telegram dry-run transcript, CI sanity checks, and
+  troubleshooting notes based on real dogfooding failures.
 
 ## Planned Use of API Credits
 

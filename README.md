@@ -112,6 +112,7 @@ See [COMMANDS.md](COMMANDS.md).
 - [Maintainer workflows](docs/WORKFLOWS.md)
 - [Prompt templates](docs/PROMPT_TEMPLATES.md)
 - [Workflow presets](docs/WORKFLOW_PRESETS.md)
+- [Live workflow runbook](docs/LIVE_WORKFLOW_RUNBOOK.md)
 - [Illustrative demo transcript](docs/DEMO_TRANSCRIPT.md)
 - [Fresh-checkout setup verification](docs/SETUP_VERIFICATION.md)
 - [Troubleshooting](docs/TROUBLESHOOTING.md)

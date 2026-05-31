@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Added a live workflow runbook for Telegram dogfooding, transcript capture,
+  and public redaction.
+- Created a public dogfooding issue for the issue-triage workflow.
+
 ## 0.2.0 - Maintainer workflow kit
 
 - Added Python project metadata in `pyproject.toml`, including an editable
