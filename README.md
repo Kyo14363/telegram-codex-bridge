@@ -97,6 +97,12 @@ Codex CLI on their own machine. It is not a hosted service.
 
 See [COMMANDS.md](COMMANDS.md).
 
+## Codex for Open Source
+
+This project is being prepared for the Codex for Open Source program as an
+early maintainer-workflow tool. Draft application notes live in
+[docs/OSS_APPLICATION_NOTES.md](docs/OSS_APPLICATION_NOTES.md).
+
 ## Security Model
 
 This project intentionally runs Codex CLI on your machine. Treat the Telegram
