@@ -1,8 +1,8 @@
 # Demo Transcript
 
-This file contains one redacted live dry run plus illustrative workflow
-transcripts. It does not contain private tokens, Telegram user IDs, real issue
-data, or private workspace paths.
+This file contains redacted live dogfooding runs plus illustrative workflow
+transcripts. It does not contain private tokens, Telegram user IDs, private
+issue data, or private workspace paths.
 
 The goal is to show the maintainer experience the project is designed around:
 start from Telegram, let the bridge gather lightweight context, run one bounded
@@ -69,7 +69,106 @@ TCB_WORKING_DIR=.\workspace
 TCB_CODEX_SEARCH=false
 ```
 
-## Scenario 1: Issue Triage
+## Live Issue Triage (Redacted)
+
+Date: 2026-05-31
+
+Source issue:
+
+```text
+https://github.com/Kyo14363/telegram-codex-bridge/issues/1
+```
+
+Maintainer sends:
+
+```text
+Triage this issue for maintainer action:
+https://github.com/Kyo14363/telegram-codex-bridge/issues/1
+
+Do not modify files.
+
+Return:
+- likely category
+- severity and user impact
+- missing reproduction details
+- likely owner area
+- suggested labels
+- draft maintainer reply
+
+Keep the reply polite, specific, and easy to paste into GitHub.
+```
+
+Captured bridge progress:
+
+```text
+Only the final Telegram result was captured for this run.
+```
+
+Telegram receives:
+
+```text
+Codex result
+
+Based on issue `#1` and the repo README snapshot, this looks like a maintainer workflow-validation issue rather than a product bug.
+
+- Likely category: `documentation` / `dogfooding` / `maintainer-workflow validation`
+- Severity and user impact: `Low`
+  - No end-user-facing product regression is described.
+  - Impact is mainly on maintainer confidence, runbook quality, and whether the Telegram-to-Codex triage flow works as documented.
+- Missing reproduction details:
+  - Exact bridge version or commit used for the dogfood run
+  - Codex CLI version and model, if relevant
+  - Exact Telegram prompt/message sent to the bot
+  - Whether URL preprocessing was enabled and what context was injected
+  - Runtime settings that may affect behavior, especially `TCB_CODEX_SEARCH` and `TCB_CODEX_FULL_AUTO`
+  - Actual observed output vs expected output, if the workflow fails
+  - Confirmation method for "no local files modified"
+  - Link or location of the redacted transcript once captured
+- Likely owner area:
+  - Maintainer tooling / workflow docs
+  - Likely code areas: Telegram message handling, Codex task execution, URL preprocessing, and runbook/docs
+- Suggested labels:
+  - `documentation`
+  - `workflow`
+  - `dogfood`
+  - `maintainer-tooling`
+  - `low-risk`
+
+Draft maintainer reply:
+
+Thanks for opening this. I am triaging it as a workflow-validation/documentation issue rather than a product bug.
+
+Current assessment:
+- Category: dogfooding / maintainer workflow validation
+- Severity: low
+- User impact: limited to maintainer workflow confidence and documentation quality; no direct end-user regression is described
+
+The goal here is clear: verify that the Telegram bridge can accept the issue URL, run one bounded review-only Codex task, and return a structured triage result without modifying local files.
+
+For follow-up, the main evidence we still want is:
+- the exact Telegram prompt used
+- bridge/Codex version or commit
+- relevant runtime flags if they affect behavior
+- a redacted transcript of the run
+- confirmation of how "no local files modified" was verified
+
+Proposed maintainer action:
+1. Label this as documentation/workflow dogfood.
+2. Run the issue through the Telegram bridge in review-only mode.
+3. Save a redacted transcript for the live workflow runbook.
+4. Close once the documentation evidence is captured, or convert into a bug if the run exposes a real failure.
+
+No immediate product fix is implied by the current report, but this is a useful smoke test for the maintainer workflow.
+```
+
+Observed outcome:
+
+- The bridge returned a structured issue triage result.
+- The response matched the requested issue-triage shape.
+- The output did not include private tokens, Telegram IDs, or local account paths.
+- `git status -sb` showed no tracked repository changes immediately before this transcript was added.
+
+## Illustrative Issue Triage Example
 
 Maintainer sends:
 

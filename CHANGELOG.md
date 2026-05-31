@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added a redacted live issue-triage transcript from Telegram dogfooding.
 - Added a live workflow runbook for Telegram dogfooding, transcript capture,
   and public redaction.
 - Created a public dogfooding issue for the issue-triage workflow.
