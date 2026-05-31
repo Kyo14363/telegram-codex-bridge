@@ -93,6 +93,10 @@ running Codex CLI on their own machine. It is not a hosted service.
 | `TCB_CODEX_FULL_AUTO` | `false` | Whether to pass `--full-auto` to Codex CLI |
 | `TCB_CODEX_TIMEOUT` | `1800` | Per-task timeout in seconds |
 
+Relative path settings are resolved from the repository root, so
+`TCB_WORKING_DIR=.\workspace` becomes a stable absolute path inside this
+checkout.
+
 ## Commands
 
 See [COMMANDS.md](COMMANDS.md).

@@ -57,6 +57,17 @@ def parse_paths(value: str | None) -> List[str]:
     return [part.strip() for part in re.split(r"[;\n]+", value) if part.strip()]
 
 
+def resolve_path(value: str | Path) -> Path:
+    path = Path(value).expanduser()
+    if not path.is_absolute():
+        path = BASE_DIR / path
+    return path.resolve()
+
+
+def resolve_paths(values: Iterable[str]) -> List[str]:
+    return [str(resolve_path(value)) for value in values]
+
+
 def parse_allowed_users(value: str | None) -> List[int]:
     ids: List[int] = []
     for part in re.split(r"[,\s;]+", (value or "").strip()):
@@ -73,12 +84,12 @@ load_dotenv()
 
 CONFIG = {
     "BASE_DIR": BASE_DIR,
-    "LOG_DIR": Path(os.getenv("TCB_LOG_DIR", BASE_DIR / "logs")),
-    "RUN_DIR": Path(os.getenv("TCB_RUN_DIR", BASE_DIR / "runs")),
-    "FETCH_OUTPUT_DIR": Path(os.getenv("TCB_FETCH_OUTPUT_DIR", BASE_DIR / "fetch_outputs")),
-    "STATS_FILE": Path(os.getenv("TCB_STATS_FILE", BASE_DIR / "stats.json")),
-    "WORKING_DIR": Path(os.getenv("TCB_WORKING_DIR", BASE_DIR / "workspace")),
-    "CODEX_EXTRA_DIRS": parse_paths(os.getenv("TCB_CODEX_EXTRA_DIRS")),
+    "LOG_DIR": resolve_path(os.getenv("TCB_LOG_DIR", "logs")),
+    "RUN_DIR": resolve_path(os.getenv("TCB_RUN_DIR", "runs")),
+    "FETCH_OUTPUT_DIR": resolve_path(os.getenv("TCB_FETCH_OUTPUT_DIR", "fetch_outputs")),
+    "STATS_FILE": resolve_path(os.getenv("TCB_STATS_FILE", "stats.json")),
+    "WORKING_DIR": resolve_path(os.getenv("TCB_WORKING_DIR", "workspace")),
+    "CODEX_EXTRA_DIRS": resolve_paths(parse_paths(os.getenv("TCB_CODEX_EXTRA_DIRS"))),
     "CODEX_MODEL": os.getenv("TCB_CODEX_MODEL", "").strip(),
     "CODEX_SEARCH": parse_bool(os.getenv("TCB_CODEX_SEARCH"), default=False),
     "CODEX_FULL_AUTO": parse_bool(os.getenv("TCB_CODEX_FULL_AUTO"), default=False),
@@ -93,7 +104,7 @@ CONFIG = {
     "IMAGE_ANALYSIS_TIMEOUT": parse_int(os.getenv("TCB_IMAGE_ANALYSIS_TIMEOUT"), 30),
     "GITHUB_README_MAX_LEN": parse_int(os.getenv("TCB_GITHUB_README_MAX_LEN"), 8000),
     "THIN_CONTENT_THRESHOLD": parse_int(os.getenv("TCB_THIN_CONTENT_THRESHOLD"), 200),
-    "OBSIDIAN_MOBILE_DIR": Path(os.getenv("TCB_OBSIDIAN_MOBILE_DIR", BASE_DIR / "obsidian_clippings")),
+    "OBSIDIAN_MOBILE_DIR": resolve_path(os.getenv("TCB_OBSIDIAN_MOBILE_DIR", "obsidian_clippings")),
     "ALLOWED_USER_IDS": parse_allowed_users(os.getenv("TCB_ALLOWED_USER_IDS") or os.getenv("ALLOWED_USER_IDS")),
     "TELEGRAM_BOT_TOKEN": (
         os.getenv("TELEGRAM_CODEX_BOT_TOKEN")

@@ -7,7 +7,7 @@ import unittest
 from pathlib import Path
 
 from bridge_core import CodexBridge
-from config import CONFIG
+from config import BASE_DIR, CONFIG, resolve_path
 from url_fetchers import detect_urls
 
 
@@ -16,6 +16,9 @@ class SmokeTests(unittest.TestCase):
         urls = detect_urls("please inspect https://github.com/openai/openai-python")
         self.assertTrue(urls)
         self.assertEqual(urls[0][1], "github")
+
+    def test_relative_paths_resolve_from_repo_root(self) -> None:
+        self.assertEqual(resolve_path(".\\workspace"), (BASE_DIR / "workspace").resolve())
 
     def test_default_command_does_not_enable_full_auto(self) -> None:
         bridge = CodexBridge()
