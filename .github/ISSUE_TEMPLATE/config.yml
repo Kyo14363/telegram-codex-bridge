@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security guidance
+    url: https://github.com/Kyo14363/telegram-codex-bridge/security/policy
+    about: Do not post active tokens, exploit details, or private logs in public issues.

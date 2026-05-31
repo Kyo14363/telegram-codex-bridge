@@ -103,8 +103,8 @@ https://openai.com/form/codex-for-oss/
   workflow end-to-end.
 - Expand `docs/SECURITY.md` with platform-specific hardening notes for Windows,
   macOS, Linux, and containerized deployments.
+- Replace `docs/DEMO_TRANSCRIPT.md` with a redacted live Telegram transcript.
 - Add tests for prompt construction, event summarization, and URL preprocessing
   edge cases.
 - Add a sample `.env` walkthrough for Windows and Linux.
-- Add screenshots or terminal transcripts showing a maintainer task from
-  Telegram to Codex result.
+- Add screenshots showing a maintainer task from Telegram to Codex result.

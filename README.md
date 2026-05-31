@@ -100,6 +100,9 @@ See [COMMANDS.md](COMMANDS.md).
 ## Documentation
 
 - [Maintainer workflows](docs/WORKFLOWS.md)
+- [Illustrative demo transcript](docs/DEMO_TRANSCRIPT.md)
+- [Roadmap](docs/ROADMAP.md)
+- [Contributing](CONTRIBUTING.md)
 - [Security guide](docs/SECURITY.md)
 - [Security policy](SECURITY.md)
 - [Codex for Open Source notes](docs/OSS_APPLICATION_NOTES.md)
