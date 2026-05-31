@@ -97,6 +97,9 @@ Relative path settings are resolved from the repository root, so
 `TCB_WORKING_DIR=.\workspace` becomes a stable absolute path inside this
 checkout.
 
+If your installed Codex CLI rejects its default model, set
+`TCB_CODEX_MODEL` in `.env` to a model supported by that CLI version.
+
 ## Commands
 
 See [COMMANDS.md](COMMANDS.md).

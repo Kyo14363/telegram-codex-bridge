@@ -48,6 +48,7 @@ The repository `.gitignore` excludes those paths by default.
 | `TCB_WORKING_DIR` | Dedicated checkout | Home directory | Limits what Codex sees and changes. |
 | `TCB_CODEX_EXTRA_DIRS` | empty | broad paths | Extra dirs expand filesystem access. |
 | `TCB_CODEX_SEARCH` | `false` | `true` | Search may send task context to web-backed tooling. |
+| `TCB_CODEX_MODEL` | CLI default or known-supported model | unsupported/newer model | Unsupported models can fail tasks before Codex produces output. |
 
 ## Workspace Boundaries
 
