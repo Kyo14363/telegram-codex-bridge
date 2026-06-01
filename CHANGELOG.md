@@ -4,6 +4,8 @@
 
 - Added adoption, platform setup, deployment security checklist, and context
   provider boundary docs for v0.3 preparation.
+- Reworked the live workflow runbook into OpenAI-facing dogfooding evidence and
+  application framing.
 - Fixed Windows-style relative path settings such as `.\workspace` on macOS and
   Linux.
 - Expanded CI to run install, lint, compile, smoke, sanity, and package build
