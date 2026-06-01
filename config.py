@@ -58,6 +58,8 @@ def parse_paths(value: str | None) -> List[str]:
 
 
 def resolve_path(value: str | Path) -> Path:
+    if isinstance(value, str) and os.name != "nt":
+        value = value.replace("\\", "/")
     path = Path(value).expanduser()
     if not path.is_absolute():
         path = BASE_DIR / path

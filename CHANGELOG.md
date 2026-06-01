@@ -4,6 +4,8 @@
 
 - Added adoption, platform setup, deployment security checklist, and context
   provider boundary docs for v0.3 preparation.
+- Fixed Windows-style relative path settings such as `.\workspace` on macOS and
+  Linux.
 - Expanded CI to run install, lint, compile, smoke, sanity, and package build
   checks across Windows, macOS, and Linux.
 - Further redacted the demo transcript by replacing the local model override
