@@ -61,26 +61,15 @@ Credits would be used to harden and document real maintainer workflows:
 
 ### Why does this repository qualify? (<=500 chars)
 
-Telegram Codex Bridge is an early but focused maintainer tool: a self-hosted
-Telegram control plane for Codex CLI. It helps maintainers triage issues, review
-repo/URL context, run release checklists, and trigger bounded local Codex tasks
-from mobile. Its ecosystem value is a reusable bridge pattern for mobile-first
-OSS maintenance automation.
+Telegram Codex Bridge qualifies as an early OSS maintainer-workflow tool, not by stars yet but by ecosystem pattern. It is a self-hosted, Telegram-native bridge for bounded Codex CLI tasks from mobile: issue triage, repo context review, and release checks. The public repo includes v0.2.1 releases, safety defaults, prompt templates, dogfooding transcripts, and cross-platform CI.
 
 ### How will you use API credits for your project? (<=500 chars)
 
-API credits would fund dogfooding and examples for real maintainer workflows:
-PR review prompts, issue triage, release-checklist automation, GitHub/URL
-context fetching, and eval runs comparing safe vs full-auto Codex modes. The
-goal is to turn the bridge from a personal tool into a documented, tested OSS
-workflow kit for small maintainers.
+API credits would fund real maintainer dogfooding and examples: PR review, issue triage, release-checklist runs, URL/GitHub context evaluation, and safe-vs-full-auto evals. I would use them to harden the bridge, expand transcripts/tests, document security boundaries, and turn this personal tool into a forkable OSS workflow kit for small maintainers.
 
 ### Anything else we should know? (<=500 chars)
 
-This is a newly public repo extracted from a working personal bridge, so
-stars/downloads are not the signal yet. I am applying early to accelerate
-hardening: tests, docs, security defaults, GitHub Actions examples, and
-maintainer workflows for mobile access to Codex without hosting a SaaS service.
+This repo is newly public, so stars/downloads are not the signal yet. The value is a reusable, auditable bridge pattern: maintainers can fork it for Telegram, Discord, Slack, LINE, Codex CLI, local agents, CI triage, or release workflows. Live runs already found stale docs and missing CI build coverage, then shipped fixes in v0.2.1.
 
 ## Suggested Repository Metadata
 
