@@ -31,15 +31,19 @@ before adding broad features.
 - [x] Live demo transcripts for issue triage, repository context review, and
       release checklist
 - [x] Optional workflow presets for review-only vs full-auto mode
-- [ ] Better setup notes for Windows, macOS, and Linux
+- [x] Better setup notes for Windows, macOS, and Linux
 
 ## v0.3: Adoptable OSS Tool
 
 - [x] Versioned release notes and GitHub releases
 - [x] Real-world dogfooding examples
 - [x] Contributor guide
-- [ ] Security hardening checklist by deployment mode
-- [ ] Minimal plugin architecture for extra URL/context providers
+- [x] Security hardening checklist by deployment mode
+- [x] Adoption guide for first-time maintainers
+- [x] Cross-platform CI for install, test, sanity, and package build
+- [x] Context-provider boundary documentation
+- [ ] Minimal provider registry implementation, if a concrete new provider
+      needs it
 
 ## Non-Goals for Now
 
@@ -47,3 +51,4 @@ before adding broad features.
 - Multi-user tenant management
 - Replacing GitHub Actions or full CI systems
 - Running Codex without a local Codex CLI installation
+- Publishing to PyPI before there is a clear maintenance reason

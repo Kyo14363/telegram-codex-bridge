@@ -110,16 +110,20 @@ See [COMMANDS.md](COMMANDS.md).
 ## Documentation
 
 - [Maintainer workflows](docs/WORKFLOWS.md)
+- [Adoption guide](docs/ADOPTION_GUIDE.md)
 - [Prompt templates](docs/PROMPT_TEMPLATES.md)
 - [Workflow presets](docs/WORKFLOW_PRESETS.md)
 - [Live workflow runbook](docs/LIVE_WORKFLOW_RUNBOOK.md)
-- [Illustrative demo transcript](docs/DEMO_TRANSCRIPT.md)
+- [Demo transcript](docs/DEMO_TRANSCRIPT.md)
+- [Platform setup notes](docs/PLATFORM_SETUP.md)
 - [Fresh-checkout setup verification](docs/SETUP_VERIFICATION.md)
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
 - [Roadmap](docs/ROADMAP.md)
 - [Contributing](CONTRIBUTING.md)
 - [Security guide](docs/SECURITY.md)
+- [Deployment security checklist](docs/DEPLOYMENT_SECURITY_CHECKLIST.md)
 - [Security policy](SECURITY.md)
+- [Context providers](docs/CONTEXT_PROVIDERS.md)
 - [Codex for Open Source notes](docs/OSS_APPLICATION_NOTES.md)
 
 ## Codex for Open Source
@@ -155,7 +159,8 @@ python -m ruff check .
 python -m compileall -q .
 python smoke_tests.py
 python scripts/sanity_check.py
+python -m build
 ```
 
 The GitHub Actions workflow runs editable-package install, lint, compile, smoke,
-and repository sanity checks.
+repository sanity checks, and package build on Windows, macOS, and Linux.

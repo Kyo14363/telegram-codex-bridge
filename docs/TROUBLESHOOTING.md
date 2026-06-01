@@ -119,10 +119,10 @@ Fix options:
 2. Set an explicit model supported by your installed CLI:
 
 ```env
-TCB_CODEX_MODEL=gpt-5.4
+TCB_CODEX_MODEL=<known-supported-model>
 ```
 
-The live v0.1.1 dry run used this compatibility setting.
+The live dry run used this compatibility setting with a locally supported model.
 
 ## Codex Produces No Final Output
 

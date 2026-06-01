@@ -115,3 +115,6 @@ If you find a security issue:
 - Test new workflows in a disposable checkout.
 - Review diffs before commit and push.
 - Redact logs before filing issues.
+
+For a deployment-mode checklist, see
+[Deployment security checklist](DEPLOYMENT_SECURITY_CHECKLIST.md).

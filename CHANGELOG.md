@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+- Added adoption, platform setup, deployment security checklist, and context
+  provider boundary docs for v0.3 preparation.
+- Expanded CI to run install, lint, compile, smoke, sanity, and package build
+  checks across Windows, macOS, and Linux.
+- Further redacted the demo transcript by replacing the local model override
+  value with a placeholder.
+
 ## 0.2.1 - Dogfooding evidence refresh
 
 - Added a redacted live release-checklist transcript from Telegram dogfooding.

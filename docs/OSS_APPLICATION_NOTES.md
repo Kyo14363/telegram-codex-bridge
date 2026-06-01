@@ -42,8 +42,8 @@ as a reusable workflow pattern:
 - The public repository now includes a `v0.2.1` prerelease, prompt templates,
   workflow presets, a live workflow runbook, fresh-checkout verification notes,
   redacted live Telegram dogfooding transcripts, CI sanity checks, package
-  build verification, and troubleshooting notes based on real dogfooding
-  failures.
+  build verification, cross-platform CI, adoption/security guides, and
+  troubleshooting notes based on real dogfooding failures.
 
 ## Planned Use of API Credits
 
@@ -114,3 +114,4 @@ https://openai.com/form/codex-for-oss/
 - Add tests for more Codex event shapes and URL preprocessing edge cases.
 - Add a sample `.env` walkthrough for Windows and Linux.
 - Add screenshots showing a maintainer task from Telegram to Codex result.
+- Keep PyPI publishing out of scope until there is a clear maintenance reason.

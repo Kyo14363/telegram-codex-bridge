@@ -14,7 +14,7 @@ The live runs below used review-only settings.
 
 ```env
 TCB_ALLOWED_USER_IDS=<one allowed Telegram user>
-TCB_CODEX_MODEL=gpt-5.4
+TCB_CODEX_MODEL=<local model override>
 TCB_CODEX_FULL_AUTO=false
 TCB_CODEX_SEARCH=false
 TCB_WORKING_DIR=.\workspace
@@ -35,7 +35,7 @@ files.
 Bridge command shape:
 
 ```text
-codex exec --json --skip-git-repo-check -C <repo>\workspace -o <repo>\runs\codex-last-20260531-182934.txt -m gpt-5.4 -
+codex exec --json --skip-git-repo-check -C <repo>\workspace -o <repo>\runs\codex-last-20260531-182934.txt -m <local model override> -
 ```
 
 Telegram receives, translated from the original Traditional Chinese result:
@@ -61,9 +61,8 @@ Two issues were found and fixed during the live dry run:
 
 - Relative runtime paths must resolve from the repository root before passing
   them to Codex. This prevents `workspace\workspace` style failures.
-- Some Codex CLI installs may reject their default model. The local dry run set
-  `TCB_CODEX_MODEL=gpt-5.4`, and the public docs now explain this compatibility
-  setting.
+- Some Codex CLI installs may reject their default model. The local dry run used
+  `TCB_CODEX_MODEL`, and the public docs now explain this compatibility setting.
 
 ## Live Issue Triage
 
